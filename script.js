@@ -87,7 +87,9 @@ $(document).ready(function () {
 // let fourSave = $("#4");
 // let fiveSave = $("#5");
 
-$(".saveBtn").on("click", function (event) {
+let scheduled = [];
+
+let addScheduled = $(".saveBtn").on("click", function (event) {
   event.preventDefault();
 
   let $parent = $(this).parents("tr");
@@ -97,27 +99,15 @@ $(".saveBtn").on("click", function (event) {
   console.log(inputVal);
 });
 
-// $(".saveBtn").on("click", function(e){
-// $(this).text.val().trim();
-// schedule();
-// }
-
-//handle the events - bubbling this in the event handler - to get the parent and other children
-//time here input box here - save and from the parent and get other children//add jquery
-// button.addEventListener("click", handleClick);
-
-//using this and parentNode and other things we can get text content of siblings
+scheduled.append(scheduled);
+document.input[0].reset(); //clear text from input
 
 //save to local storage
-
-//local storage
-
-//savedTaskTimeFrame = 1 hour
-//onclick event
-//toJson= function (){
-moment().toObject();
-// };
+this.setItem("ScheduledList", JSON.stringify(scheduled));
 
 // retrieve local storage data
-
-moment().toString();
+getScheduled = function (scheduled) {
+  let retrievedScheduled = this.getItem("ScheduledList");
+  return retrievedScheduled && JSON.parese(scheduled);
+  $(this).data - todo.add(inputVal);
+};

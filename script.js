@@ -55,9 +55,9 @@ $(document).ready(function () {
 //       .add(hourCounter, "hour")
 //       .format("MMM D, YYYY h:mm A");
 //     console.log(timeSlot);
-    //generate <tr>ref: row 11 + save to variable array
-    // .$("#nine")
-    // .text(9);
+//generate <tr>ref: row 11 + save to variable array
+// .$("#nine")
+// .text(9);
 //   }
 //   //attach variable name to tbody generate * attach table body rows
 // }
@@ -69,43 +69,48 @@ $(document).ready(function () {
 //moment().isAfter(#tdID).addClass(.past);
 //if else (requestedTime > now) = addClass(.future)
 // if moment().isBefore(#tdID).addClass(.future);
-//the we can use moment.js to alter cs classes to 
+//the we can use moment.js to alter cs classes to
 
 //query selector all. loop through all the elements and if (current element < moment.js time
 
+// // save text into local storage when the save button is pressed
+// let saveBtnsEls = document.querySelectorAll(".saveBtn");
+// console.log(saveBtnsEls);
+// //add event listeners to the buttons w/for loop
+// let nineSave = $("#9");
+// let tenSave = $("#10");
+// let elevenSave = $("#11");
+// let twelveSave = $("#12");
+// let oneSave = $("#1");
+// let twoSave = $("#2");
+// let threeSave = $("#3");
+// let fourSave = $("#4");
+// let fiveSave = $("#5");
 
+$(".saveBtn").on("click", function (event) {
+  event.preventDefault();
 
-// save text into local storage when the save button is pressed
-let saveBtnsEls = document.querySelectorAll(".saveBtn");
-console.log(saveBtnsEls);
-//add event listeners to the buttons w/for loop
-let nineSave = $("#9");
-let tenSave = $("#10");
-let elevenSave = $("#11");
-let twelveSave = $("#12");
-let oneSave = $("#1");
-let twoSave = $("#2");
-let threeSave = $("#3");
-let fourSave = $("#4");
-let fiveSave = $("#5");
-$(".saveBtn").on("click", function(){
-let schedule = $(text).val().trim();
-schedule();
-}
+  let $parent = $(this).parents("tr");
+  let $input = $parent.find("input");
+
+  let inputVal = $input.val().trim();
+  console.log(inputVal);
+});
+
+// $(".saveBtn").on("click", function(e){
+// $(this).text.val().trim();
+// schedule();
+// }
 
 //handle the events - bubbling this in the event handler - to get the parent and other children
-//time here input box here - save and from the parent and get other children//add jquery 
+//time here input box here - save and from the parent and get other children//add jquery
 // button.addEventListener("click", handleClick);
 
 //using this and parentNode and other things we can get text content of siblings
 
 //save to local storage
 
-
 //local storage
-
-
-
 
 //savedTaskTimeFrame = 1 hour
 //onclick event

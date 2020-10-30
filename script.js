@@ -68,16 +68,18 @@ $(document).ready(function () {
 //the we can use moment.js to alter cs classes to
 //query selector all. loop through all the elements and if (current element < moment.js time
 
-function addCSS {
-  if ($(data-time) === now){
-    $(this).addClass(".present");
+ $("#td").each(function(i){
+  if (this.data.time === now){
+  this.addClass = ".present"; 
+  }if(this.data.time === moment().isAfter){
+  this.addClass = ".past";
+  }if (this.data.time === moment().isBefore{
+  this.addClass(".future");
   }
-  if ($(data-time) === moment().isAfter){
-    $(this).addClass(".past");
-}
-if ($(data-time) === moment().isBefore){
-  $(this).addClass(".future");
-}
+  }
+
+
+
 
 
 

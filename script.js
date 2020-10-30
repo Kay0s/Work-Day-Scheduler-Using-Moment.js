@@ -62,16 +62,33 @@ $(document).ready(function () {
 //   //attach variable name to tbody generate * attach table body rows
 // }
 // addHourDisplayed();
-// // update past, present or future to its corresponding color
-//if (requestedTime now is === now) = addClass(.present)
-//ifmoment().isSame(#tdID).addClass(.present);
-// if else (requestedTime < now) = addClass(.past)
-//moment().isAfter(#tdID).addClass(.past);
-//if else (requestedTime > now) = addClass(.future)
-// if moment().isBefore(#tdID).addClass(.future);
-//the we can use moment.js to alter cs classes to
 
+
+// // update past, present or future to its corresponding color
+//the we can use moment.js to alter cs classes to
 //query selector all. loop through all the elements and if (current element < moment.js time
+
+function addCSS {
+  if ($(data-time) === now){
+    $(this).addClass(".present");
+  }
+  if ($(data-time) === moment().isAfter){
+    $(this).addClass(".past");
+}
+if ($(data-time) === moment().isBefore){
+  $(this).addClass(".future");
+}
+
+
+
+
+//ifmoment().isSame(#tdID).addClass(.present);
+// if else (data-time < now) = addClass(.past)
+//moment().isAfter(#tdID).addClass(.past);
+//if else (data-time > now) = addClass(.future)
+// if moment().isBefore(#tdID).addClass(.future);
+
+
 
 // // save text into local storage when the save button is pressed
 // let saveBtnsEls = document.querySelectorAll(".saveBtn");
@@ -109,5 +126,5 @@ this.setItem("ScheduledList", JSON.stringify(scheduled));
 getScheduled = function (scheduled) {
   let retrievedScheduled = this.getItem("ScheduledList");
   return retrievedScheduled && JSON.parese(scheduled);
-  $(this).data - todo.add(inputVal);
+  $(this).("data - todo").add(inputVal);
 };

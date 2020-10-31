@@ -5,7 +5,6 @@ let yesterday = moment().subtract(1, "days").endOf("day");
 // moment("2016-01-01T23:35:01");
 // moment().format("MMM Do YYYY, j:mm:ss a");
 let now = moment();
-moment().calendar();
 
 //display today's date at the top of the calendar
 $(document).ready(function () {
@@ -63,34 +62,26 @@ $(document).ready(function () {
 // }
 // addHourDisplayed();
 
-
 // // update past, present or future to its corresponding color
 //the we can use moment.js to alter cs classes to
 //query selector all. loop through all the elements and if (current element < moment.js time
 
- $("#td").each(function(i){
-  if (this.data.time === now){
-  this.addClass = ".present"; 
-  }if(this.data.time === moment().isAfter){
-  this.addClass = ".past";
-  }if (this.data.time === moment().isBefore{
-  this.addClass(".future");
+$("tr").each(function (i) {
+  let cssTime = moment().format("h");
+  if (this.data.time === cssTime) {
+    this.addClass(".present");
+  } else if (this.data.time < cssTime) {
+    this.addClass(".past");
+  } else {
+    this.addClass(".future");
   }
-  }
-
-
-
-
-
-
+});
 
 //ifmoment().isSame(#tdID).addClass(.present);
 // if else (data-time < now) = addClass(.past)
 //moment().isAfter(#tdID).addClass(.past);
 //if else (data-time > now) = addClass(.future)
 // if moment().isBefore(#tdID).addClass(.future);
-
-
 
 // // save text into local storage when the save button is pressed
 // let saveBtnsEls = document.querySelectorAll(".saveBtn");
@@ -113,20 +104,23 @@ let addScheduled = $(".saveBtn").on("click", function (event) {
 
   let $parent = $(this).parents("tr");
   let $input = $parent.find("input");
+  let scheduledTime = $parent.attr("saveBtn");
+  let value = $(this).data - todo.val;
 
   let inputVal = $input.val().trim();
   console.log(inputVal);
+
+  scheduled.append(addScheduled);
+  //clear text from input
+  document.input[0].reset();
+
+  //save to local storage
+  this.setItem("scheduledTime", JSON.stringify(scheduled));
+  this.setItem("value", JSON.stringify(scheduled));
+
+  // retrieve local storage data
+  getScheduled = function (scheduled) {
+    let retrievedScheduled = this.getItem("ScheduledList");
+    return retrievedScheduled && JSON.parse(scheduled);
+  };
 });
-
-scheduled.append(scheduled);
-document.input[0].reset(); //clear text from input
-
-//save to local storage
-this.setItem("ScheduledList", JSON.stringify(scheduled));
-
-// retrieve local storage data
-getScheduled = function (scheduled) {
-  let retrievedScheduled = this.getItem("ScheduledList");
-  return retrievedScheduled && JSON.parese(scheduled);
-  $(this).("data - todo").add(inputVal);
-};

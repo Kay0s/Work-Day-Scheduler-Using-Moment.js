@@ -27,14 +27,16 @@ getScheduled = function (addScheduled) {
 
 //.each loop to add CSS present, past and future colors based on current time
 let timeId = moment().hours();
+let tableInt = $(this).children().attr("data-time");
+
 $("tr").each(function () {
-  if (parseInt(data.time) === timeId) {
+  if (parseInt(tableInt) === timeId) {
     this.addClass("present");
-  } else if (parseInt(data.time) < timeId) {
+  } else if (parseInt(tableInt) < timeId) {
     $(this).removeClass("present");
     $(this).addClass("past");
   }
-  if (parseInt(data.time) > timeId) {
+  if (parseInt(tableInt) > timeId) {
     $(this).removeClass("past");
     $(this).removeClass("present");
     $(this).addClass("future");

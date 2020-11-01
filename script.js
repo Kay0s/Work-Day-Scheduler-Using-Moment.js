@@ -15,28 +15,28 @@ let addScheduled = $(".saveBtn").on("click", function (event) {
   let value = $(this).siblings(".time").val();
   let key = $(this).parent().attr("data-time");
   //save to local storage
-  localstorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(key, JSON.stringify(value));
 });
 
-//retrieve local storage data
-getScheduled = function (addScheduled) {
-let retrievedScheduled = this.getItem("ScheduledList");
-return retrievedScheduled && JSON.parse(addScheduled);
-$(this).data - todo.add(inputVal);
-};
+// retrieve local storage data
+//getScheduled = function (addScheduled) {
+//let retrievedScheduled = this.getItem("ScheduledList");
+//return retrievedScheduled && JSON.parse(addScheduled);
+// $(this).data - todo.add(inputVal);
+//};
 
-//.each loop to add CSS present, past and future colors based on current time
-$("tr").each(function (i) {
-  let parseInt("#timeId") = moment().hours();
-  if (data.time === timeId) {
-    this.addClass("present");
-  } else if (data.time < timeId) {
-    $(this).removeClass("present");
-    $(this).addClass("past");
-  }
-  if (data.time > timeId) {
-    $(this).removeClass("past");
-    $(this).removeClass("present");
-    $(this).addClass("future");
-  }
-});
+// //.each loop to add CSS present, past and future colors based on current time
+// $("tr").each(function (i) {
+//   let parseInt("#timeId") = moment().hours();
+//   if (data.time === timeId) {
+//     this.addClass("present");
+//   } else if (data.time < timeId) {
+//     $(this).removeClass("present");
+//     $(this).addClass("past");
+//   }
+//   if (data.time > timeId) {
+//     $(this).removeClass("past");
+//     $(this).removeClass("present");
+//     $(this).addClass("future");
+//   }
+// });

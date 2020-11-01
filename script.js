@@ -27,7 +27,7 @@ let addScheduled = $(".saveBtn").on("click", function (event) {
 
 //retrieve local storage data
 getScheduled = function (addScheduled) {
-  let retrievedScheduled = this.getItem("ScheduledList");
+  let retrievedScheduled = this.getItem(key);
   return retrievedScheduled && JSON.parse(addScheduled);
   $(this).data - todo.add(inputVal);
 };
@@ -53,3 +53,4 @@ $(".table-row").each(function () {
     $(this).addClass("future");
   }
 });
+getScheduled();

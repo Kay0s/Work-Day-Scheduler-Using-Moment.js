@@ -12,7 +12,7 @@ let userInputSlot = document.querySelector(".time");
 //save to local storage event
 let addScheduled = $(".saveBtn").on("click", function (event) {
   event.preventDefault();
-  let value = $(this).siblings(".time").val();
+  let value = $(this).closest(".time").val();
   let key = $(this).parent().attr("data-time");
   //save to local storage
   localStorage.setItem(key, JSON.stringify(value));
@@ -25,7 +25,8 @@ getScheduled = function (addScheduled) {
   $(this).data - todo.add(inputVal);
 };
 
-//.each loop to add CSS present, past and future colors based on current time
+//.each loop to add CSS .present, .past and .future classes based on current time as defined by moment().hours()
+//in comparison to "data-time" on the table
 let timeId = moment().hours();
 let tableInt = $(this).children().attr("data-time");
 

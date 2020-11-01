@@ -12,10 +12,15 @@ let userInputSlot = document.querySelector(".time");
 //save to local storage event
 let addScheduled = $(".saveBtn").on("click", function (event) {
   event.preventDefault();
-  let value = $(this).closest(".time").val();
-  console.log(value);
-  let key = $(this).parent().siblings().attr("data-time");
-  console.log(key);
+
+  let inputComp = $(this)
+    .parent()
+    .siblings(".td-time")
+    .children()
+    .closest("input");
+  let key = inputComp.attr("data-time");
+  let value = inputComp.val();
+
   //save to local storage
   localStorage.setItem(key, JSON.stringify(value));
 });
@@ -27,12 +32,15 @@ getScheduled = function (addScheduled) {
   $(this).data - todo.add(inputVal);
 };
 
+// array for data
+console.log($(".time-input[data-time='10']"));
+
 //.each loop to add CSS .present, .past and .future classes based on current time as defined by moment().hours()
 //in comparison to "data-time" on the table
 let timeId = moment().hours();
 
-$("tr").each(function () {
-  let tableInt = $(this).children().attr("data-time");
+$(".table-row").each(function () {
+  let tableInt = $(this).children(".td-time").children().attr("data-time");
   if (parseInt(tableInt) === timeId) {
     $(this).addClass("present");
   } else if (parseInt(tableInt) < timeId) {

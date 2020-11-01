@@ -13,7 +13,9 @@ let userInputSlot = document.querySelector(".time");
 let addScheduled = $(".saveBtn").on("click", function (event) {
   event.preventDefault();
   let value = $(this).closest(".time").val();
-  let key = $(this).parent().attr("data-time");
+  console.log(value);
+  let key = $(this).parent().siblings().attr("data-time");
+  console.log(key);
   //save to local storage
   localStorage.setItem(key, JSON.stringify(value));
 });

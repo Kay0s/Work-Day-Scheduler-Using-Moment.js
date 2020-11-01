@@ -28,11 +28,11 @@ getScheduled = function (addScheduled) {
 //.each loop to add CSS .present, .past and .future classes based on current time as defined by moment().hours()
 //in comparison to "data-time" on the table
 let timeId = moment().hours();
-let tableInt = $(this).children().attr("data-time");
 
 $("tr").each(function () {
+  let tableInt = $(this).children().attr("data-time");
   if (parseInt(tableInt) === timeId) {
-    this.addClass("present");
+    $(this).addClass("present");
   } else if (parseInt(tableInt) < timeId) {
     $(this).removeClass("present");
     $(this).addClass("past");

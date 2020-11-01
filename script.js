@@ -12,20 +12,17 @@ let userInputSlot = document.querySelector(".time");
 //save to local storage event
 let addScheduled = $(".saveBtn").on("click", function (event) {
   event.preventDefault();
-  let $parent = $(this).parents("tr");
-  let $input = $parent.find("input");
-  let inputVal = $input.val().trim();
-  console.log(inputVal);
-//save to local storage
-this.setItem("ScheduledList", JSON.stringify(addScheduled));
+  let value = $(this).siblings(".time").val();
+  let key = $(this).parent().attr("data-time");
+  //save to local storage
+  localstorage.setItem(key, JSON.stringify(value));
 });
 
-
-// retrieve local storage data
+//retrieve local storage data
 getScheduled = function (addScheduled) {
-  let retrievedScheduled = this.getItem("ScheduledList");
-  return retrievedScheduled && JSON.parse(addScheduled);
-  $(this).data - todo.add(inputVal);
+let retrievedScheduled = this.getItem("ScheduledList");
+return retrievedScheduled && JSON.parse(addScheduled);
+$(this).data - todo.add(inputVal);
 };
 
 //.each loop to add CSS present, past and future colors based on current time

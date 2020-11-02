@@ -7,14 +7,9 @@ $(document).ready(function () {
 
 //getting and parsing info from storage
 let storageSchedule = JSON.parse(localStorage.getItem("storageSchedule"));
-storageSchedule.forEach((pair) => {
-  console.log($(`.description`));
 
-  console.log($(`.description[data-time=9]`));
+storageSchedule?.forEach((pair) => {
   // this part is the selector. it selects a classname with the attribute data-time = to the number that is passed from each object in array.
-  // $(`.description[data-time='${pair.key}']`)
-
-  //.val(pair.value) that sets the value you are passing to the element you selected in the first section, the comments above.
   $(`.description[data-time='${pair.key}']`).val(pair.value);
 });
 //checking to see if info is already in storage, if there isn't storageSchedule array is created
@@ -22,18 +17,16 @@ if (storageSchedule === null) {
   storageSchedule = [];
 }
 
-let timeBlock = document.querySelector(".time-block");
-let tableTime = $("data-time");
-let userInputSlot = document.querySelector(".time");
-
 //save to local storage event
 $(".saveBtn").on("click", function (event) {
   event.preventDefault();
 
   let inputComp = $(this).siblings(".description");
+  console.log($(this).siblings(".description"));
   let key = inputComp.attr("data-time");
   let value = inputComp.val();
 
+  //push to storage schedule the key and value variables
   storageSchedule.push({ key, value });
 
   //save to local storage

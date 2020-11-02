@@ -5,12 +5,20 @@ $(document).ready(function () {
   $("#currentDay").text(pIDTime);
 });
 
+//getting and parsing info from storage
+let storageSchedule = JSON.parse(localStorage.getItem("storageSchedule"));
+
+//checking to see if info is already in storage, if there isn't storageSchedule array is created
+if (storageSchedule === null) {
+  storageSchedule = [];
+}
+
 let timeBlock = document.querySelector(".time-block");
 let tableTime = $("data-time");
 let userInputSlot = document.querySelector(".time");
 
 //save to local storage event
-let addScheduled = $(".saveBtn").on("click", function (event) {
+$(".saveBtn").on("click", function (event) {
   event.preventDefault();
 
   let inputComp = $(this)
@@ -21,16 +29,11 @@ let addScheduled = $(".saveBtn").on("click", function (event) {
   let key = inputComp.attr("data-time");
   let value = inputComp.val();
 
-  //save to local storage
-  localStorage.setItem(key, JSON.stringify(value));
-});
+  storageSchedule.push({ key, value });
 
-//retrieve local storage data
-getScheduled = function (addScheduled) {
-  let retrievedScheduled = this.getItem(key);
-  return retrievedScheduled && JSON.parse(addScheduled);
-  $(this).data - todo.add(inputVal);
-};
+  //save to local storage
+  localStorage.setItem("storageSchedule", JSON.stringify(storageSchedule));
+});
 
 // array for data
 console.log($(".time-input[data-time='10']"));
@@ -53,4 +56,3 @@ $(".table-row").each(function () {
     $(this).addClass("future");
   }
 });
-getScheduled();

@@ -27,64 +27,59 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p class="lead" id="currentDay"></p>
     </header>
     <div class="container">
-      <table id="calendarTable">
-        <thead><tr>
-          <th style="width:30%"></th>
-          <th style="width:30%"></th>
-          <th style="width:30%"></th>
-        </tr></thead>
-        <tbody id="timeTable">
+      <div class="time-block">
+        <div class="row" >
+          <div class="hour">9AM</div>
+          <textarea class="description" data-time="9"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">10AM</div>
+          <textarea class="description" data-time="10"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">11AM</div>
+          <textarea class="description" data-time="11"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">12PM</div>
+          <textarea class="description" data-time="12"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">1PM</div>
+          <textarea class="description" data-time="13"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">2PM</div>
+          <textarea class="description" data-time="14"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">3PM</div>
+          <textarea class="description" data-time="15"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">4PM</div>
+          <textarea class="description" data-time="16"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+        <div class="row" >
+          <div class="hour">5PM</div>
+          <textarea class="description" data-time="17"></textarea>
+          <button class="saveBtn">saveBtn</button>
+        </div>
+      </div>
+
       
-        <tr class="table-row" >
-          <td>9AM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="9"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>10AM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="10"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>11AM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="11"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>12PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="12"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>1PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="13"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>2PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="14"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>3PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="15"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>4PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="16"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-        <tr class="table-row" >
-          <td>5PM</td>
-          <td class="td-time"><input type="text" class="time-input" data-time="17"></td>
-          <td><button class="saveBtn">saveBtn</button></td>
-        </tr>
-      </tbody>
-      </table> 
+      
       
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

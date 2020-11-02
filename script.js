@@ -8,10 +8,12 @@ $(document).ready(function () {
 //getting and parsing info from storage
 let storageSchedule = JSON.parse(localStorage.getItem("storageSchedule"));
 
-storageSchedule?.forEach((pair) => {
-  // this part is the selector. it selects a classname with the attribute data-time = to the number that is passed from each object in array.
-  $(`.description[data-time='${pair.key}']`).val(pair.value);
-});
+if(storageSchedule){
+   storageSchedule.forEach((pair) => {
+    // this part is the selector. it selects a classname with the attribute data-time = to the number that is passed from each object in array.
+    $(`.description[data-time='${pair.key}']`).val(pair.value);
+  });
+}
 //checking to see if info is already in storage, if there isn't storageSchedule array is created
 if (storageSchedule === null) {
   storageSchedule = [];

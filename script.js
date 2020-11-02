@@ -7,9 +7,9 @@ $(document).ready(function () {
 
 //getting and parsing info from storage
 let storageSchedule = JSON.parse(localStorage.getItem("storageSchedule"));
-
+//learned that a question mark could be used as an alternative to an if statement on 11/1/20 from https://medium.com/javascript-in-plain-english/what-does-the-question-mark-mean-in-javascript-code-353cfadcf760
 storageSchedule?.forEach((pair) => {
-  // this part is the selector. it selects a classname with the attribute data-time = to the number that is passed from each object in array.
+  // learned about this the selector. it selects a classname with the attribute data-time = to the number that is passed from each object in array on 11/1/20 from https://api.jquery.com/attribute-equals-selector/
   $(`.description[data-time='${pair.key}']`).val(pair.value);
 });
 

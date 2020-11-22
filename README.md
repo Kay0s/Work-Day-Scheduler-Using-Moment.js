@@ -41,6 +41,12 @@ Through information and feedback provided by the empoloyee with a busy schedule,
 - If the employee refreshes the page, the saved event(s) persist in their respective time blocks, due to the retrieval of info from local storage.
   - The employee's scheduled events are generated into an array designating a key - the scheduled event and value = which hour's save button was pressed.
   - Since the employees' scheduled events are generated from inputs, JSON.parse and JSON.strigify are used to set and retrieve the scheduled event from the client side local storage.
+  
+## Tools Used
+- HTML
+- CSS
+- JQuery
+- Moment.js
 
 ## Deployed Optimized Website and Final JQuery Code
 
